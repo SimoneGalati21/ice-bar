@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex">
+<title>ICE BAR — Menù</title>
+<meta name="description" content="Menù ICE BAR: caffetteria, bevande, birre, distillati, amari e cocktail. Ogni cocktail in due versioni, l'originale e il nostro twist.">
+<meta name="theme-color" content="#050D14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://8ec22c34e5.clvaw-cdnwnd.com">
+<link rel="preconnect" href="https://duyn491kcolsw.cloudfront.net">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400;12..96,75..100,700;12..96,75..100,800&family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;1,6..72,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#050D14;
+  --night:#0C1D28;
+  --line:#1B3543;
+  --frost:#E4F1F7;
+  --steel:#83A6B8;
+  --glacier:#63D6F2;
+  --bitter:#F0325C;
+
+  --display:"Bricolage Grotesque", system-ui, sans-serif;
+  --body:"Newsreader", Georgia, serif;
+  --mono:"DM Mono", ui-monospace, monospace;
+
+  --pad:clamp(20px, 5.5vw, 44px);
+  --bar-h:112px;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--void);
+  color:var(--frost);
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.45;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img,video{display:block; max-width:100%}
+:focus-visible{outline:2px solid var(--glacier); outline-offset:3px; border-radius:2px}
+
+.shell{max-width:860px; margin:0 auto; padding:0 var(--pad)}
+
+/* ================= HERO ================= */
+.hero{
+  position:relative;
+  height:100vh; height:100svh;
+  min-height:540px;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  overflow:hidden;
+}
+.hero video, .hero .fallback{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  z-index:0;
+}
+.hero .veil{
+  position:absolute; inset:0; z-index:1;
+  background:
+    radial-gradient(120% 80% at 50% 10%, rgba(5,13,20,.15) 0%, rgba(5,13,20,.72) 60%, rgba(5,13,20,.96) 100%),
+    linear-gradient(to bottom, rgba(5,13,20,.55) 0%, rgba(5,13,20,0) 30%, rgba(5,13,20,.9) 88%);
+}
+.hero-in{position:relative; z-index:2; padding:0 var(--pad) clamp(40px,9vh,84px); max-width:860px; margin:0 auto; width:100%}
+.hero .badge{
+  width:clamp(72px,18vw,104px); height:auto; margin-bottom:26px;
+  filter:drop-shadow(0 6px 26px rgba(0,0,0,.6));
+}
+.hero h1{
+  font-family:var(--display); font-weight:800;
+  font-variation-settings:"wdth" 100;
+  font-size:clamp(58px,17vw,132px);
+  line-height:.84; letter-spacing:-.035em; text-transform:uppercase;
+  margin:0;
+  text-shadow:0 4px 40px rgba(0,0,0,.5);
+}
+.hero h1 em{font-style:normal; display:block; color:var(--glacier)}
+.hero .thesis{
+  max-width:30ch; margin:22px 0 0;
+  font-size:clamp(17px,4.4vw,21px); font-weight:300; line-height:1.4;
+  color:#CFE3EC;
+}
+.hero .thesis b{font-weight:400; color:var(--frost); box-shadow:inset 0 -2px 0 var(--bitter)}
+.cue{
+  display:flex; align-items:center; gap:9px; margin-top:34px;
+  font-family:var(--mono); font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--steel);
+}
+.cue i{display:block; width:34px; height:1px; background:var(--steel); animation:slide 2.4s ease-in-out infinite}
+@keyframes slide{0%,100%{transform:translateX(0); opacity:.4} 50%{transform:translateX(9px); opacity:1}}
+
+/* ================= STICKY BAR ================= */
+.bar{
+  position:sticky; top:0; z-index:60;
+  background:rgba(5,13,20,.9);
+  backdrop-filter:blur(14px) saturate(140%);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);
+  border-bottom:1px solid var(--line);
+}
+.bar-in{max-width:860px; margin:0 auto; padding:10px var(--pad) 0}
+.search{display:flex; gap:8px}
+.search input{
+  flex:1; min-width:0;
+  font-family:var(--mono); font-size:14px;
+  padding:11px 14px;
+  border:1px solid var(--line); border-radius:3px;
+  background:var(--night); color:var(--frost);
+}
+.search input::placeholder{color:#5C7E90}
+.search button{
+  font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase;
+  border:1px solid var(--line); background:var(--night); color:var(--steel);
+  padding:11px 13px; border-radius:3px; cursor:pointer;
+}
+.search button[hidden]{display:none}
+.chips{display:flex; gap:6px; overflow-x:auto; padding:10px 0; scrollbar-width:none; -ms-overflow-style:none; overscroll-behavior-x:contain}
+.chips::-webkit-scrollbar{display:none}
+.chip{
+  flex:0 0 auto; text-decoration:none;
+  font-family:var(--mono); font-size:10px; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--steel);
+  padding:8px 13px; border:1px solid var(--line); border-radius:999px;
+  white-space:nowrap;
+}
+.chip[aria-current="true"]{color:var(--void); background:var(--glacier); border-color:var(--glacier)}
+
+/* ================= SECTION BANDS ================= */
+.sec[hidden]{display:none}
+.band{position:relative; overflow:hidden; margin-top:8px}
+.band img, .band video{
+  width:100%; height:100%; object-fit:cover;
+  object-position:var(--pos, center);
+  aspect-ratio:3/2;
+}
+@media (min-width:760px){ .band img, .band video{aspect-ratio:2/1} }
+.band .veil{
+  position:absolute; inset:0;
+  background:linear-gradient(to bottom, rgba(5,13,20,.5) 0%, rgba(5,13,20,.1) 35%, rgba(5,13,20,.94) 100%);
+}
+.band h2{
+  position:absolute; left:0; right:0; bottom:0;
+  max-width:860px; margin:0 auto; padding:0 var(--pad) clamp(14px,3.5vw,26px);
+  font-family:var(--display); font-weight:700;
+  font-variation-settings:"wdth" 86;
+  font-size:clamp(30px,8.5vw,58px);
+  line-height:.95; letter-spacing:-.02em; text-transform:uppercase;
+  text-shadow:0 3px 24px rgba(0,0,0,.7);
+}
+.sec-note{
+  font-family:var(--mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--glacier); margin:20px 0 0;
+}
+.group{
+  font-family:var(--mono); font-size:10px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--steel); margin:32px 0 0;
+  padding-bottom:8px; border-bottom:1px solid var(--line);
+}
+.group[hidden]{display:none}
+
+/* ================= LISTS ================= */
+.list{list-style:none; margin:12px 0 0; padding:0}
+.list[hidden]{display:none}
+.body-pad{padding-bottom:14px}
+.row{display:flex; align-items:baseline; gap:10px; padding:12px 0; border-bottom:1px solid rgba(27,53,67,.7)}
+.row[hidden]{display:none}
+.row .name{font-size:17px}
+.row .name em{font-style:normal; display:block; color:var(--steel); font-size:13.5px; font-weight:300}
+.row .dots{flex:1; min-width:14px; border-bottom:1px dotted #24485A; transform:translateY(-4px)}
+.row .price{font-family:var(--mono); font-size:14px; font-weight:500; font-variant-numeric:tabular-nums; white-space:nowrap; color:var(--glacier)}
+
+/* ================= COCKTAIL CARDS ================= */
+.master{
+  display:inline-flex; align-items:center; gap:9px; margin-top:18px;
+  font-family:var(--mono); font-size:10px; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--steel); background:var(--night); border:1px solid var(--line);
+  border-radius:999px; padding:9px 15px; cursor:pointer;
+}
+.master .dot{width:8px; height:8px; border-radius:50%; background:#24485A}
+.master[aria-pressed="true"]{color:var(--frost); border-color:var(--bitter)}
+.master[aria-pressed="true"] .dot{background:var(--bitter); box-shadow:0 0 10px var(--bitter)}
+
+.cards{list-style:none; margin:20px 0 0; padding:0; display:grid; gap:12px}
+.card{
+  position:relative;
+  background:var(--night);
+  border:1px solid var(--line);
+  border-left:3px solid var(--line);
+  border-radius:4px;
+  padding:16px 18px;
+  transition:border-color .2s ease, background .2s ease;
+}
+.card[hidden]{display:none}
+.card.is-twist{border-left-color:var(--bitter); background:#12202B}
+.card-top{display:flex; align-items:center; justify-content:space-between; gap:14px}
+.card h3{
+  font-family:var(--display); font-weight:700;
+  font-variation-settings:"wdth" 84;
+  font-size:19px; letter-spacing:-.01em; text-transform:uppercase; margin:0;
+}
+.card .price{font-family:var(--mono); font-size:14px; font-weight:500; font-variant-numeric:tabular-nums; color:var(--glacier)}
+.card.is-twist .price{color:var(--bitter)}
+.ing{margin:9px 0 0; font-size:16px; font-weight:300; color:#B4CEDB; min-height:1.4em; transition:opacity .16s ease}
+.seg{display:inline-flex; margin-top:13px; border:1px solid var(--line); border-radius:999px; padding:2px}
+.seg button{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+  border:0; background:none; color:var(--steel); padding:7px 14px; border-radius:999px; cursor:pointer;
+}
+.seg button.og[aria-pressed="true"]{background:var(--glacier); color:var(--void)}
+.seg button.tw[aria-pressed="true"]{background:var(--bitter); color:#fff}
+
+/* ================= GELATI ================= */
+/* I tabelloni sono listini: si mostrano interi, mai ritagliati.
+   width/height nell'HTML riservano lo spazio esatto -> nessun salto di layout. */
+.boards{display:flex; flex-direction:column; align-items:center; gap:16px; margin-top:18px}
+.boards a{
+  display:block; width:100%;
+  border:1px solid var(--line); border-radius:4px; overflow:hidden;
+  background:var(--night);
+}
+.boards a.tall{max-width:min(340px, 100%)}
+.boards img{width:100%; height:auto}
+.boards figcaption{
+  font-family:var(--mono); font-size:10px; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--steel); text-align:center; margin-top:8px;
+}
+
+/* ================= EMPTY ================= */
+.empty{display:none; padding:70px var(--pad); max-width:860px; margin:0 auto}
+.empty p{margin:0 0 10px; font-size:20px; font-weight:300}
+.empty span{font-family:var(--mono); font-size:12px; color:var(--steel)}
+body.no-results .empty{display:block}
+
+/* ================= FOOTER ================= */
+.foot{margin-top:72px; border-top:1px solid var(--line); padding:44px 0 64px; text-align:center}
+.foot img{width:120px; margin:0 auto 22px; opacity:.9}
+.foot p{margin:0 auto 14px; max-width:46ch; font-size:16px; font-weight:300; color:#B4CEDB}
+.foot .meta{font-family:var(--mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--steel)}
+
+@media (prefers-reduced-motion:reduce){
+  .cue i{animation:none}
+  .ing, .card{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <video id="heroVid" autoplay muted loop playsinline preload="metadata"
+    poster="https://8ec22c34e5.clvaw-cdnwnd.com/2ed3c84f5a8ee1bf639ad276c3410149/200000986-6b0416b043/COCKTAIL%20GHIACCIATO.jpeg?ph=8ec22c34e5">
+    <source src="https://duyn491kcolsw.cloudfront.net/files/2e/2e1/2e1sgs.mp4?ph=8ec22c34e5" type="video/mp4">
+  </video>
+  <div class="veil"></div>
+  <div class="hero-in">
+    <img class="badge" src="https://8ec22c34e5.clvaw-cdnwnd.com/2ed3c84f5a8ee1bf639ad276c3410149/200000992-0e45c0e45e/ICE%20SPOT.png?ph=8ec22c34e5" alt="Logo Ice Bar" width="104" height="104">
+    <h1>Ice<em>Bar</em></h1>
+    <p class="thesis">Caffetteria, birre, distillati e cocktail. Ogni cocktail in due versioni: <b>l'originale e il nostro twist</b>.</p>
+    <p class="cue"><i></i> Scorri il menù</p>
+  </div>
+</header>
+
+<nav class="bar" id="bar" aria-label="Cerca e naviga il menù">
+  <div class="bar-in">
+    <div class="search">
+      <input id="q" type="search" placeholder="Cerca: gin, amaro, birra…" aria-label="Cerca nel menù" autocomplete="off">
+      <button id="clear" type="button" hidden>Azzera</button>
+    </div>
+    <div class="chips" id="chips"></div>
+  </div>
+</nav>
+
+<main id="main"></main>
+
+<div class="empty" id="empty">
+  <p>Nessuna voce corrisponde alla ricerca.</p>
+  <span>Prova con “gin”, “rum” o “caffè”. Per tutto il resto, chiedi al banco.</span>
+</div>
+
+<footer class="foot">
+  <div class="shell">
+    <img src="https://8ec22c34e5.clvaw-cdnwnd.com/2ed3c84f5a8ee1bf639ad276c3410149/200000996-bd9f9bd9fb/logo%20senza%20sfondo-1.png?ph=8ec22c34e5" alt="Ice Bar" loading="lazy">
+    <p>Grazie a chi sceglie di passare qui il proprio tempo. Ogni caffè, ogni aperitivo, ogni serata rende questo posto quello che è.</p>
+    <p style="font-size:14px">— Gianluca, Ice Bar</p>
+    <p class="meta">Per allergeni chiedi al personale · Prezzi in euro</p>
+  </div>
+</footer>
+
+<script>
+/* Tutti i prezzi vivono qui. Si modifica una riga, non una pagina. */
+const CDN = "https://8ec22c34e5.clvaw-cdnwnd.com/2ed3c84f5a8ee1bf639ad276c3410149/";
+const MENU = [
+  { id:"caffetteria", nome:"Caffetteria",
+    img:"https://duyn491kcolsw.cloudfront.net/files/2j/2j6/2j61oc.jpg?ph=8ec22c34e5",
+    items:[
+      {n:"Caffè espresso",p:"1,00"},{n:"Caffè decaffeinato",p:"1,20"},{n:"Caffè marocchino",p:"1,20"},
+      {n:"Caffè freddo",p:"1,20"},{n:"Caffè d'orzo",p:"1,20"},{n:"Caffè shakerato",p:"3,00"},
+      {n:"Cappuccino",p:"1,50"},{n:"Crema babà",p:"3,00"},{n:"Crema caffè",p:"3,00"},
+      {n:"Latte di mandorla",p:"3,00"}
+  ]},
+  { id:"bevande", nome:"Bevande",
+    img:CDN+"200000984-9495694958/red%20bull%20sugar%20free%20twist.jpeg?ph=8ec22c34e5",
+    pos:"center 42%",   /* immagine quadrata 1080x1080: il taglio parte dall'alto */
+    items:[
+      {n:"Red Bull Zero",p:"3,00"},{n:"Red Bull Cocco",p:"3,00"},{n:"Red Bull Summer Edition",p:"3,00"},
+      {n:"Coca Cola",p:"2,00"},{n:"Coca Cola Zero",p:"2,00"},{n:"Coca Cola in vetro",p:"2,50"},
+      {n:"Fanta",p:"2,00"},{n:"Sprite",p:"2,00"},{n:"Estathé pesca o limone",p:"2,00"}
+  ]},
+  { id:"birre", nome:"Birre",
+    img:CDN+"200001004-85d6d85d6f/birra-e-limone.jpeg?ph=8ec22c34e5",
+    gruppi:[
+      {titolo:"Alla spina", items:[
+        {n:"Moretti Baffo d'Oro",s:"20 cl",p:"3,00"},
+        {n:"Moretti Baffo d'Oro",s:"40 cl",p:"5,00"}]},
+      {titolo:"In bottiglia", items:[
+        {n:"Bjorn",p:"4,00"},{n:"Beck's",p:"3,00"},{n:"Corona",p:"4,00"},{n:"Heineken",p:"3,00"},
+        {n:"Nastro Azzurro",p:"2,50"},{n:"Tennent's",p:"4,00"},{n:"Bud",p:"2,50"},
+        {n:"Raffo",p:"3,00"},{n:"Bulldog",p:"4,00"}]}
+  ]},
+  { id:"distillati", nome:"Distillati",
+    img:CDN+"200001006-c66b1c66b3/rum-schiavi-e-america.jpeg?ph=8ec22c34e5",
+    gruppi:[
+      {titolo:"Whisky", items:[
+        {n:"Jack Daniel's",p:"3,00"},{n:"Jack Daniel's Honey",p:"4,00"},{n:"Jack Daniel's Fire",p:"4,00"},
+        {n:"Johnnie Walker Red",p:"3,00"},{n:"Johnnie Walker Black",p:"4,00"},{n:"Johnnie Walker Double Black",p:"5,00"},
+        {n:"Lagavulin",p:"8,00"},{n:"Oban 14 anni",p:"8,00"},{n:"Talisker Skye",p:"8,00"},
+        {n:"Macallan 12 anni",p:"10,00"}]},
+      {titolo:"Rum", items:[
+        {n:"Pellerossa",p:"3,00"},{n:"Appleton Estate",p:"4,00"},{n:"Legendario Ron Dorado",p:"3,00"},
+        {n:"Legendario Ron Añejo",p:"4,00"},{n:"Pampero Aniversario",p:"4,00"},{n:"Diplomático",p:"6,00"},
+        {n:"Don Papa",s:"Baroko o Maskara",p:"7,00"}]},
+      {titolo:"Grappe", items:[
+        {n:"903 Bianca",p:"3,00"},{n:"903 Barrique",p:"3,00"},{n:"18 Lune Barrique",p:"4,00"},
+        {n:"18 Lune Whisky",p:"5,00"},{n:"18 Lune Rum",p:"5,00"}]}
+  ]},
+  { id:"amari", nome:"Amari e digestivi",
+    img:CDN+"200001008-2eb332eb35/frozen-cube-v2.jpeg?ph=8ec22c34e5",
+    items:[
+      {n:"Vecchio Amaro del Capo",p:"2,50"},{n:"Averna",p:"2,50"},{n:"Montenegro",p:"2,50"},
+      {n:"Fernet Branca o Branca Menta",p:"2,50"},{n:"Jägermeister",p:"2,50"},{n:"Unicum",p:"2,50"},
+      {n:"Petrus",p:"2,50"},{n:"Jefferson",p:"3,00"},{n:"Disaronno",p:"2,50"},{n:"Baileys",p:"2,50"},
+      {n:"Sambuca",p:"2,50"},{n:"Limoncello",p:"2,50"},{n:"Liquirizia",p:"2,50"},{n:"Mela verde",p:"2,50"},
+      {n:"Kaciùto",p:"2,50"},{n:"Kèphas",p:"2,50"}
+  ]},
+  { id:"cocktail", nome:"Cocktail", tipo:"cocktail",
+    img:CDN+"200000986-6b0416b043/COCKTAIL%20GHIACCIATO.jpeg?ph=8ec22c34e5",
+    nota:"Scegli l'originale o il twist della casa",
+    items:[
+      {n:"Negroni",o:{i:"Gin · Bitter · Vermouth rosso",p:"7,00"},t:{i:"Mezcal · Bitter al caffè · Vermouth rosso",p:"7,00"}},
+      {n:"Whiskey Sour",o:{i:"Bourbon · Lime · Zucchero · Foamer",p:"7,00"},t:{i:"Disaronno · Lime · Zucchero · Foamer",p:"7,00"}},
+      {n:"Caipirinha",o:{i:"Cachaça · Lime · Zucchero",p:"7,00"},t:{i:"Cachaça · Lime · Liquirizia · Zucchero",p:"7,00"}},
+      {n:"Paloma",o:{i:"Tequila · Lime · Sale · Soda · Pompelmo",p:"7,00"},t:{i:"Mezcal · Honey mix · Lime · Sale · Soda · Pompelmo",p:"7,00"}},
+      {n:"Daiquiri",o:{i:"Rum cubano · Lime · Zucchero",p:"7,00"},t:{i:"Rum agricole overproof · Lime · Zucchero · Honey mix · Passion fruit",p:"7,00"}},
+      {n:"Espresso Martini",o:{i:"Vodka · Liquore al caffè · Zucchero · Espresso",p:"8,00"},t:{i:"Rum ambrato · Liquore alla nocciola · Zucchero · Espresso",p:"8,00"}},
+      {n:"Long Island Iced Tea",o:{i:"Vodka · Gin · Rum · Triple sec · Lime · Cola · Zucchero",p:"7,00"},t:{i:"Vodka · Gin · Rum · Lime · Cola · Zucchero · Ginger beer",p:"7,00"}},
+      {n:"Margarita",o:{i:"Tequila · Triple sec · Lime",p:"7,00"},t:{i:"Ancho Reyes · Tequila · Triple sec · Lime · Bitter al cioccolato",p:"8,00"}},
+      {n:"Mojito",o:{i:"Rum cubano · Lime · Zucchero · Menta · Soda",p:"7,00"},t:{i:"Vodka · Amaro del Capo Red · Basilico · Lime · Zucchero · Soda",p:"7,00"}},
+      {n:"Basil Smash",o:{i:"Gin · Lime · Zucchero · Basilico · Foamer",p:"7,00"},t:{i:"Italicus · Rum bianco · Lime · Zucchero · Basilico",p:"8,00"}},
+      {n:"Moscow Mule",o:{i:"Vodka · Lime · Ginger beer",p:"7,00"},t:{i:"Gin · Lime · Sale · Soda al cetriolo",p:"7,00"}},
+      {n:"Americano",o:{i:"Vermouth rosso · Bitter Campari · Soda",p:"7,00"},t:{i:"Vermouth rosso · Bitter Campari · Soda · Mandarino · Bergamotto",p:"7,00"}},
+      {n:"Old Fashioned",o:{i:"Bourbon · Angostura · Soda · Zucchero",p:"7,00"},t:{i:"Whiskey alla cannella · Angostura · Soda · Zucchero",p:"8,00"}}
+  ]},
+  { id:"gelati", nome:"Gelati", tipo:"gelati",
+    video:"https://duyn491kcolsw.cloudfront.net/files/1k/1ko/1ko7tl.mp4?ph=8ec22c34e5",
+    /* poster orizzontale (2,21:1): regge il taglio della banda molto meglio
+       del tabellone verticale che c'era prima */
+    poster:CDN+"200000988-9cf429cf44/tabellone%20novit%C3%A0%20algida%202026.jpeg?ph=8ec22c34e5",
+    nota:"Gusti e prezzi esposti al banco frigo",
+    boards:[
+      {src:CDN+"200000988-9cf429cf44/tabellone%20novit%C3%A0%20algida%202026.jpeg?ph=8ec22c34e5",
+       w:1880, h:852,  alt:"Novità gelati Algida 2026", cap:"Novità 2026"},
+      {src:CDN+"200000990-bd6e6bd6e8/gelati%20algida%202026.jpeg?ph=8ec22c34e5",
+       w:809,  h:1920, alt:"Listino gelati Algida 2026", cap:"Listino completo", tall:true}
+  ]}
+];
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const rowHTML = it => `<li class="row" data-k="${esc((it.n+" "+(it.s||"")).toLowerCase())}">
+  <span class="name">${esc(it.n)}${it.s?`<em>${esc(it.s)}</em>`:""}</span>
+  <span class="dots" aria-hidden="true"></span>
+  <span class="price">${esc(it.p)}</span></li>`;
+
+const main = document.getElementById("main");
+let html = "";
+
+MENU.forEach((sec, si) => {
+  const pos = sec.pos ? ` style="--pos:${sec.pos}"` : "";
+  const media = sec.video
+    ? `<video muted loop playsinline preload="none" poster="${sec.poster}" data-lazyvid="${sec.video}"${pos}></video>`
+    : `<img src="${sec.img}" alt="" loading="${si<1?"eager":"lazy"}" decoding="async"${pos}>`;
+
+  html += `<section class="sec" id="${sec.id}">
+    <div class="band">${media}<div class="veil"></div><h2>${esc(sec.nome)}</h2></div>
+    <div class="shell body-pad">`;
+
+  if (sec.nota) html += `<p class="sec-note">${esc(sec.nota)}</p>`;
+
+  if (sec.tipo === "cocktail") {
+    html += `<button class="master" type="button" aria-pressed="false" data-master>
+        <span class="dot" aria-hidden="true"></span><span data-mlabel>Mostra tutti i twist</span></button><ul class="cards">`;
+    sec.items.forEach((c,i) => {
+      html += `<li class="card" data-k="${esc((c.n+" "+c.o.i+" "+c.t.i).toLowerCase())}"
+          data-oi="${esc(c.o.i)}" data-op="${esc(c.o.p)}" data-ti="${esc(c.t.i)}" data-tp="${esc(c.t.p)}">
+        <div class="card-top"><h3 id="ck${i}">${esc(c.n)}</h3><span class="price" data-price>${esc(c.o.p)}</span></div>
+        <p class="ing" data-ing>${esc(c.o.i)}</p>
+        <div class="seg" role="group" aria-labelledby="ck${i}">
+          <button type="button" class="og" aria-pressed="true">Originale</button>
+          <button type="button" class="tw" aria-pressed="false">Twist</button>
+        </div></li>`;
+    });
+    html += `</ul>`;
+  } else if (sec.tipo === "gelati") {
+    html += `<div class="boards">` + sec.boards.map(b =>
+      `<figure style="margin:0;width:100%;display:flex;flex-direction:column;align-items:center">
+         <a class="${b.tall?"tall":""}" href="${b.src}" target="_blank" rel="noopener">
+           <img src="${b.src}" alt="${esc(b.alt)}" width="${b.w}" height="${b.h}" loading="lazy" decoding="async">
+         </a>
+         <figcaption>${esc(b.cap)} · tocca per ingrandire</figcaption>
+       </figure>`
+    ).join("") + `</div>`;
+  } else if (sec.gruppi) {
+    sec.gruppi.forEach(g => {
+      html += `<p class="group">${esc(g.titolo)}</p><ul class="list">${g.items.map(rowHTML).join("")}</ul>`;
+    });
+  } else {
+    html += `<ul class="list">${sec.items.map(rowHTML).join("")}</ul>`;
+  }
+  html += `</div></section>`;
+});
+main.innerHTML = html;
+
+/* ---------- chips ---------- */
+const chips = document.getElementById("chips");
+chips.innerHTML = MENU.map(s => `<a class="chip" href="#${s.id}" data-nav="${s.id}">${esc(s.nome)}</a>`).join("");
+const links = [...chips.querySelectorAll("[data-nav]")];
+const bar = document.getElementById("bar");
+
+/* Sposta la barra chip senza toccare lo scroll della pagina.
+   scrollIntoView() farebbe scorrere anche il documento: qui non si usa. */
+let chipTouch = false;
+chips.addEventListener("pointerdown", () => { chipTouch = true; }, {passive:true});
+addEventListener("pointerup", () => { setTimeout(() => chipTouch = false, 400); }, {passive:true});
+
+function centerChip(a){
+  if (chipTouch) return;
+  const target = a.offsetLeft - (chips.clientWidth - a.offsetWidth) / 2;
+  chips.scrollLeft = Math.max(0, Math.min(target, chips.scrollWidth - chips.clientWidth));
+}
+let current = null;
+function setCurrent(id){
+  if (id === current) return;
+  current = id;
+  links.forEach(a => {
+    const on = a.dataset.nav === id;
+    a.setAttribute("aria-current", on ? "true" : "false");
+    if (on) centerChip(a);
+  });
+}
+
+/* ---------- scroll spy ---------- */
+let lock = 0;
+const secs = [...document.querySelectorAll(".sec")];
+const spy = new IntersectionObserver(entries => {
+  if (Date.now() < lock) return;
+  const vis = entries.filter(e => e.isIntersecting)
+    .sort((a,b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+  if (vis) setCurrent(vis.target.id);
+}, {rootMargin:"-120px 0px -55% 0px"});
+secs.forEach(s => spy.observe(s));
+
+/* ---------- nav click: un solo scroll controllato ---------- */
+chips.addEventListener("click", e => {
+  const a = e.target.closest("[data-nav]");
+  if (!a) return;
+  e.preventDefault();
+  const sec = document.getElementById(a.dataset.nav);
+  if (!sec) return;
+  lock = Date.now() + 800;
+  setCurrent(a.dataset.nav);
+  const y = sec.getBoundingClientRect().top + scrollY - bar.offsetHeight + 1;
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  scrollTo({top:y, behavior: reduce ? "auto" : "smooth"});
+});
+
+/* ---------- twist ---------- */
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+function setVersion(card, twist){
+  const ing = card.querySelector("[data-ing]"), price = card.querySelector("[data-price]");
+  card.querySelector(".og").setAttribute("aria-pressed", twist ? "false" : "true");
+  card.querySelector(".tw").setAttribute("aria-pressed", twist ? "true" : "false");
+  card.classList.toggle("is-twist", twist);
+  const apply = () => {
+    ing.textContent = twist ? card.dataset.ti : card.dataset.oi;
+    price.textContent = twist ? card.dataset.tp : card.dataset.op;
+    ing.style.opacity = "1";
+  };
+  if (reduce) return apply();
+  ing.style.opacity = "0";
+  setTimeout(apply, 150);
+}
+document.addEventListener("click", e => {
+  const btn = e.target.closest(".seg button");
+  if (btn) return setVersion(btn.closest(".card"), btn.classList.contains("tw"));
+  const m = e.target.closest("[data-master]");
+  if (m){
+    const on = m.getAttribute("aria-pressed") !== "true";
+    m.setAttribute("aria-pressed", String(on));
+    m.querySelector("[data-mlabel]").textContent = on ? "Torna agli originali" : "Mostra tutti i twist";
+    document.querySelectorAll(".card").forEach(c => setVersion(c, on));
+  }
+});
+
+/* ---------- video: carica e riproduci solo quando serve ---------- */
+const vidObs = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    const v = en.target;
+    if (en.isIntersecting){
+      if (!v.src && v.dataset.lazyvid){ v.src = v.dataset.lazyvid; }
+      v.play().catch(()=>{});
+    } else { v.pause(); }
+  });
+}, {threshold:.25});
+document.querySelectorAll("video").forEach(v => vidObs.observe(v));
+if (reduce) document.querySelectorAll("video").forEach(v => { v.autoplay = false; v.pause(); vidObs.unobserve(v); });
+
+/* ---------- ricerca ---------- */
+const q = document.getElementById("q"), clear = document.getElementById("clear");
+function filter(){
+  const term = q.value.trim().toLowerCase();
+  clear.hidden = !term;
+  let total = 0;
+  secs.forEach(sec => {
+    let hits = 0;
+    sec.querySelectorAll("[data-k]").forEach(it => {
+      const ok = !term || it.dataset.k.includes(term);
+      it.hidden = !ok;
+      if (ok) hits++;
+    });
+    const hasSearchable = sec.querySelector("[data-k]") !== null;
+    sec.hidden = !!term && hasSearchable && hits === 0;
+    if (!hasSearchable) sec.hidden = !!term;   // sezione Gelati: nascosta durante la ricerca
+    total += hits;
+    sec.querySelectorAll(".group").forEach(g => {
+      const ul = g.nextElementSibling;
+      const n = ul ? [...ul.querySelectorAll(".row")].filter(r => !r.hidden).length : 0;
+      const off = !!term && n === 0;
+      g.hidden = off;
+      if (ul) ul.hidden = off;
+    });
+  });
+  document.body.classList.toggle("no-results", !!term && total === 0);
+}
+q.addEventListener("input", filter);
+clear.addEventListener("click", () => { q.value = ""; filter(); q.focus(); });
+</script>
+</body>
+</html>
